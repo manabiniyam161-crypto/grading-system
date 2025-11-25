@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Grading System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+        .box {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>University Grading System</h2>
+
+        <input id="name" type="text" placeholder="Student Name">
+        <input id="mark" type="number" placeholder="Enter Mark (0-100)">
+        
+        <button onclick="calculate()">Get Grade</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculate() {
+            let name = document.getElementById("name").value;
+            let mark = Number(document.getElementById("mark").value);
+            let grade = "";
+
+            if (mark >= 90) grade = "A+";
+            else if (mark >= 80) grade = "A";
+            else if (mark >= 70) grade = "B";
+            else if (mark >= 60) grade = "C";
+            else if (mark >= 50) grade = "D";
+            else grade = "F";
+
+            document.getElementById("result").innerHTML =
+                name + "'s grade is: " + grade;
+        }
+    </script>
+
+</body>
+</html>
